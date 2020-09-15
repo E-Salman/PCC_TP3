@@ -10,7 +10,7 @@ package pc_tp3.Ejercicio1;
  * @author Admin
  */
 public class CuentaBanco {
-    private int balance = 100;
+    private int balance = 50;
     
     public int getBalance(){
         return balance;

@@ -32,10 +32,8 @@ public class Main {
         /*VerificarCuenta vc = new VerificarCuenta();
         Thread Luis = new Thread(vc, "Luis");
         Thread Manuel = new Thread(vc, "Manuel");
-        Thread Juan = new Thread(vc, "Juan");
         Luis.start();
-        Manuel.start(); 
-        Juan.start();/
+        Manuel.start(); */
         
         //2)
         /*VIDA vida = new VIDA();
@@ -54,7 +52,7 @@ public class Main {
         System.out.println("Vida resultante: " + vida.obtenerVida());*/
         
         //3)
-        Turno turno = new Turno();
+        /*Turno turno = new Turno();
         Letra a,b,c;
         a = new Letra('A', 1, turno);
         b = new Letra('B', 2, turno);
@@ -64,7 +62,7 @@ public class Main {
         Thread cHilo = new Thread(c, "C");
         aHilo.start();
         bHilo.start();
-        cHilo.start();
+        cHilo.start();*/
         
         //4)
         /*Service service = new Service();
