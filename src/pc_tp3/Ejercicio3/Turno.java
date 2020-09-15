@@ -22,10 +22,6 @@ public class Turno {
         proximoTurno = 'A';
         imprimiendo = false;
     }
-        
-    public void enUso(){
-        imprimiendo = !imprimiendo;
-    }
     
     public void calcularProximoTurno(char letra){
         int auxLetra = 0;

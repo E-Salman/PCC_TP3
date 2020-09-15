@@ -37,11 +37,10 @@ public class Letra implements Runnable{
     }
     
     public void imprimir(){
-        turno.enUso();
-        turno.calcularProximoTurno(letra);
-        for(int i = 0; i < cantidad; i++)
-            System.out.println(letra);
-        turno.enUso();
-        imprimio = true;
+        synchronized(turno){
+            turno.calcularProximoTurno(letra);
+            for(int i = 0; i < cantidad; i++) System.out.println(letra);
+            imprimio = true;
+        }        
     }    
 }
