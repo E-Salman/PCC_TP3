@@ -1,4 +1,4 @@
-package pc_tp3.Main;
+package pc_tp3;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
