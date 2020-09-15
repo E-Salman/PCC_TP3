@@ -12,24 +12,11 @@ package pc_tp3.Ejercicio1;
 public class CuentaBanco {
     private int balance = 100;
     
-    public CuentaBanco(){
-    }
-    
     public int getBalance(){
         return balance;
     }
-    
-   /*public synchronized void retiroBancario(int retiro, CuentaBanco cb) throws InterruptedException{
-        //Thread.sleep(2000);
-        if(cb.getBalance() >= retiro){
-            balance = balance - retiro;
-        }
-        else
-            System.out.println("El retiro fue cancelado por falta de fondos.");
-    }*/
-    
+        
     public synchronized void retiroBancario(int retiro, CuentaBanco cb) throws InterruptedException{
-        //Thread.sleep(2000);
         if(cb.getBalance() >= retiro){
             System.out.println(Thread.currentThread().getName() + " esta realizando un retiro de: " + retiro + ".");
             balance = balance - retiro;           

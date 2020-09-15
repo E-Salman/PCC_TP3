@@ -1,12 +1,15 @@
+package pc_tp3.Main;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pc_tp3.Ejercicio1;
+
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pc_tp3.Ejercicio1.VerificarCuenta;
 import pc_tp3.Ejercicio4.Auto;
 import pc_tp3.Ejercicio4.Service;
 import pc_tp3.Ejercicio2.Curandero;

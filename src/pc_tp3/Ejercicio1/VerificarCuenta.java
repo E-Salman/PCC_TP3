@@ -16,7 +16,7 @@ public class VerificarCuenta implements Runnable{
     
     private CuentaBanco cb = new CuentaBanco();
     
-    private void hacerRetiro(int cantidad) throws InterruptedException{ //hacer pausas sleep thread de este lado, tratar de no sincronizar el thread, solo el recurso compartidol
+    private void hacerRetiro(int cantidad) throws InterruptedException{
         Thread.sleep(2000);
         cb.retiroBancario(cantidad, cb);
     }
