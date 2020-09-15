@@ -13,7 +13,7 @@ import pc_tp3.Ejercicio1.VerificarCuenta;
 import pc_tp3.Ejercicio4.Auto;
 import pc_tp3.Ejercicio4.Service;
 import pc_tp3.Ejercicio2.Curandero;
-import pc_tp3.Ejercicio2.Vidaa;
+import pc_tp3.Ejercicio2.Vida;
 import pc_tp3.Ejercicio2.Orco;
 import pc_tp3.Ejercicio3.Letra;
 import pc_tp3.Ejercicio3.Turno;

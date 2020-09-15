@@ -11,7 +11,7 @@ package pc_tp3.Ejercicio2;
  */
 public class Orco extends Personaje{
     
-    public Orco(Vidaa vida) {
+    public Orco(Vida vida) {
         super(vida);
         modificador = -3;
     }
