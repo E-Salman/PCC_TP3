@@ -13,7 +13,7 @@ import pc_tp3.Ejercicio1.VerificarCuenta;
 import pc_tp3.Ejercicio4.Auto;
 import pc_tp3.Ejercicio4.Service;
 import pc_tp3.Ejercicio2.Curandero;
-import pc_tp3.Ejercicio2.VIDA;
+import pc_tp3.Ejercicio2.Vidaa;
 import pc_tp3.Ejercicio2.Orco;
 import pc_tp3.Ejercicio3.Letra;
 import pc_tp3.Ejercicio3.Turno;
@@ -30,22 +30,23 @@ public class Main {
     public static void main(String[] args){
         //1)
         /*VerificarCuenta vc = new VerificarCuenta();
-        Thread Luis = new Thread(vc, "Luis");
-        Thread Manuel = new Thread(vc, "Manuel");
-        Luis.start();
-        Manuel.start(); */
+        Thread[] hilos = new Thread[2];
+        hilos[0] = new Thread(vc, "Luis");
+        hilos[1] = new Thread(vc, "Manuel");
+        for(int i = 0; i < 2; i++) hilos[i].start();*/
         
         //2)
-        /*VIDA vida = new VIDA();
-        Orco orco = new Orco(vida);
-        Curandero curandero = new Curandero(vida);
-        Thread orcoHilo = new Thread(orco, "orco");
-        Thread curanderoHilo = new Thread(curandero, "curandero");
-        orcoHilo.start();
-        curanderoHilo.start();
-        try{
-            orcoHilo.join();            //Los dos joins son para que el hilo main espere a que terminen sus ejecuciones 
-            curanderoHilo.join();       //los dos hilos antes de imprimir la vida resultante final
+        /*Vida vida = new Vida();
+        Thread[] hilos = new Thread[2];
+        hilos[0] = new Thread(new Orco(vida), "orco");
+        hilos[1] = new Thread(new Curandero(vida), "curandero");
+        for(int i = 0; i < 2; i++){
+            hilos[i].start();
+        }
+        try{        
+            for(int i = 0; i < 2; i++){
+                hilos[i].join();            //Los dos joins son para que el hilo main espere a que terminen sus ejecuciones 
+            }                               //los dos hilos antes de imprimir la vida resultante final
         } catch (InterruptedException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -53,34 +54,20 @@ public class Main {
         
         //3)
         /*Turno turno = new Turno();
-        Letra a,b,c;
-        a = new Letra('A', 1, turno);
-        b = new Letra('B', 2, turno);
-        c = new Letra('C', 3, turno);
-        Thread aHilo = new Thread(a, "A");
-        Thread bHilo = new Thread(b, "B");
-        Thread cHilo = new Thread(c, "C");
-        aHilo.start();
-        bHilo.start();
-        cHilo.start();*/
+        Thread[] hilos = new Thread[3];
+        hilos[0] = new Thread(new Letra ('A', 1, turno));
+        hilos[1] = new Thread(new Letra ('B', 2, turno));
+        hilos[2] = new Thread(new Letra ('C', 3, turno));
+        for(int i = 0; i < 3; i++) hilos[i].start();*/
         
         //4)
         /*Service service = new Service();
-        Auto a1, a2, a3, a4, a5;
-        a1 = new Auto(service, 50);
-        a2 = new Auto(service, 125);
-        a3 = new Auto(service, 150);
-        a4 = new Auto(service, 250);
-        a5 = new Auto(service, 175);
-        Thread a1Hilo = new Thread(a1, "Auto 1");
-        Thread a2Hilo = new Thread(a2, "Auto 2");
-        Thread a3Hilo = new Thread(a3, "Auto 3");
-        Thread a4Hilo = new Thread(a4, "Auto 4");
-        Thread a5Hilo = new Thread(a5, "Auto 5");        
-        a1Hilo.start();
-        a2Hilo.start();
-        a3Hilo.start();
-        a4Hilo.start();
-        a5Hilo.start();*/
+        Thread[] hilos = new Thread[5];
+        hilos[0] = new Thread(new Auto (service, 50), "Auto 1");
+        hilos[1] = new Thread(new Auto (service, 125), "Auto 2");
+        hilos[2] = new Thread(new Auto (service, 150), "Auto 3");
+        hilos[3] = new Thread(new Auto (service, 250), "Auto 4");
+        hilos[4] = new Thread(new Auto (service, 175), "Auto 5");
+        for(int i = 0; i < 5; i++) hilos[i].start();*/
     }    
 }

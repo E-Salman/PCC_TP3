@@ -9,7 +9,7 @@ package pc_tp3.Ejercicio2;
  *
  * @author Admin
  */
-public class VIDA {
+public class Vidaa {
     public int vida = 10;
     
     public void guardarVida(int vida){

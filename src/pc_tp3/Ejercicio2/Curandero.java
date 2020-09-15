@@ -11,7 +11,7 @@ package pc_tp3.Ejercicio2;
  */
 public class Curandero extends Personaje{
     
-    public Curandero(VIDA vida) {
+    public Curandero(Vidaa vida) {
         super(vida);
         modificador = 3;
     }    

@@ -11,9 +11,9 @@ package pc_tp3.Ejercicio2;
  */
 public class Personaje implements Runnable{
     int modificador;
-    VIDA vida;
+    Vidaa vida;
     
-    public Personaje(VIDA vida){
+    public Personaje(Vidaa vida){
         this.vida = vida;        
     }
     
