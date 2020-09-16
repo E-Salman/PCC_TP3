@@ -37,7 +37,7 @@ public class Letra implements Runnable{
     }
     
     public void imprimir(){
-        synchronized(turno){
+        synchronized(turno){ //Preguntar el miercoles si una vez tomada la llave, si otros hilos pueden acceder a otros metodos del mismo Turno
             turno.calcularProximoTurno(letra);
             for(int i = 0; i < cantidad; i++) System.out.println(letra);
             imprimio = true;

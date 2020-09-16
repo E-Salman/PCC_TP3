@@ -10,29 +10,18 @@ package pc_tp3.Ejercicio3;
  * @author Admin
  */
 public class Turno {
-    char[] ultimoTurno;    
     int proximoTurno;
-    boolean imprimiendo;
     
     public Turno(){
-        ultimoTurno = new char[3];
-        ultimoTurno[0] = 'A';
-        ultimoTurno[1] = 'B';
-        ultimoTurno[2] = 'C';
-        proximoTurno = 'A';
-        imprimiendo = false;
+        proximoTurno = 65;      //Valor de 'A' en ascii
     }
     
     public void calcularProximoTurno(char letra){
-        int auxLetra = 0;
-        for(int i = 0; i < 2; i++){
-            if(letra == ultimoTurno[i]) auxLetra = i;
-        }
-        if(auxLetra == 2) proximoTurno = 0;
-        else proximoTurno = ultimoTurno[auxLetra + 1];
+        if((int)letra == 67) proximoTurno = 65;     //67 es el valor de 'C' en ascii, si es mayor, vuelve al valor de 'A'
+        else proximoTurno++;
     }
     
     public boolean obtenerTurno(char letra){
-        return (letra == proximoTurno && !imprimiendo);
+        return ((int)letra == proximoTurno);
     }
 }
