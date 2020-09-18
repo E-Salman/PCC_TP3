@@ -14,23 +14,17 @@ import java.util.logging.Logger;
  */
 public class VerificarCuenta implements Runnable{
     
-    private CuentaBanco cb = new CuentaBanco();
+    private CuentaBanco cb = new CuentaBanco(); //Recurso compartido
     
-    private void hacerRetiro(int cantidad) throws InterruptedException{
-        Thread.sleep(2000);
+    private void hacerRetiro(int cantidad){
         cb.retiroBancario(cantidad, cb);
     }
     
     public void run(){
         for(int i = 0; i <= 3; i++){
-            try{
-                this.hacerRetiro(10);
-                if(cb.getBalance() < 0){
-                    System.out.println("La cuenta esta sobregirada.");
-                }
-            }
-            catch (InterruptedException ex){
-                Logger.getLogger(VerificarCuenta.class.getName()).log(Level.SEVERE, null, ex);
+            this.hacerRetiro(10);
+            if(cb.getBalance() < 0){
+                System.out.println("La cuenta esta sobregirada.");
             }
         }
     }

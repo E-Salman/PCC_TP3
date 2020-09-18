@@ -10,8 +10,8 @@ package pc_tp3.Ejercicio2;
  * @author Admin
  */
 public class Personaje implements Runnable{
-    int modificador;
-    Vida vida;
+    int modificador;        //Valor por el que se modificara la vida
+    Vida vida;              //Recurso compartido
     
     public Personaje(Vida vida){
         this.vida = vida;        

@@ -29,7 +29,7 @@ public class Main {
      */
     public static void main(String[] args){
         
-        int ejercicio = 3;        //Modificar para elegir que ejercicio ejecutar
+        int ejercicio = 1;        //Modificar para elegir que ejercicio ejecutar
                                   //Ej: ejercicio = 1 ejecuta el primer ejercicio
         switch(ejercicio){
             case 1:
@@ -50,7 +50,7 @@ public class Main {
     public static void ejecutarEj1(){
         VerificarCuenta vc = new VerificarCuenta();
         Thread[] hilos = new Thread[2];
-        hilos[0] = new Thread(vc, "Luis");
+        hilos[0] = new Thread(vc, "Luis");                      //Se crean los hilos y se agregan al arreglo
         hilos[1] = new Thread(vc, "Manuel");
         for(int i = 0; i < 2; i++) hilos[i].start();
     }
@@ -58,7 +58,7 @@ public class Main {
     public static void ejecutarEj2(){
         Vida vida = new Vida();
         Thread[] hilos = new Thread[2];
-        hilos[0] = new Thread(new Orco(vida), "orco");
+        hilos[0] = new Thread(new Orco(vida), "orco");          //Se crean los hilos y se agregan al arreglo
         hilos[1] = new Thread(new Curandero(vida), "curandero");
         for(int i = 0; i < 2; i++){
             hilos[i].start();
@@ -76,16 +76,16 @@ public class Main {
     public static void ejecutarEj3(){
         Turno turno = new Turno();
         Thread[] hilos = new Thread[3];
-        hilos[0] = new Thread(new Letra ('A', 1, turno));
-        hilos[1] = new Thread(new Letra ('B', 2, turno));
-        hilos[2] = new Thread(new Letra ('C', 3, turno));
+        hilos[0] = new Thread(new Letra ('A', 1, turno), "Hilo A");     //Se crean los hilos y se agregan al arreglo
+        hilos[1] = new Thread(new Letra ('B', 2, turno), "Hilo B");
+        hilos[2] = new Thread(new Letra ('C', 3, turno), "Hilo C");
         for(int i = 0; i < 3; i++) hilos[i].start();
     }
     
     public static void ejecutarEj4(){
         Service service = new Service();
         Thread[] hilos = new Thread[5];
-        hilos[0] = new Thread(new Auto (service, 50), "Auto 1");
+        hilos[0] = new Thread(new Auto (service, 50), "Auto 1");        //Se crean los hilos y se agregan al arreglo
         hilos[1] = new Thread(new Auto (service, 125), "Auto 2");
         hilos[2] = new Thread(new Auto (service, 150), "Auto 3");
         hilos[3] = new Thread(new Auto (service, 250), "Auto 4");
