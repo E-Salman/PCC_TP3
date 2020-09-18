@@ -16,7 +16,7 @@ public class Vida {
         this.vida = vida;
     }
     
-    public synchronized int obtenerVida(){
+    public int obtenerVida(){
         return vida;
     }
     
