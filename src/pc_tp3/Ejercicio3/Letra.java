@@ -30,7 +30,7 @@ public class Letra implements Runnable{
             if(turno.obtenerTurno(letra)) imprimir();   //Si es su turno, imprime a traves del metodo imprimir()
             else try {
                 Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+            } catch (InterruptedException ex){//prueba comentario
                 Logger.getLogger(Letra.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

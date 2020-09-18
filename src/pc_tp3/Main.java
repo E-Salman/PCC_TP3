@@ -29,7 +29,7 @@ public class Main {
      */
     public static void main(String[] args){
         
-        int ejercicio = 1;        //Modificar para elegir que ejercicio ejecutar
+        int ejercicio = 4;        //Modificar para elegir que ejercicio ejecutar
                                   //Ej: ejercicio = 1 ejecuta el primer ejercicio
         switch(ejercicio){
             case 1:
