@@ -16,6 +16,6 @@ public class Service{
     
     public synchronized void cargarNafta() throws InterruptedException{
         System.out.println("El " + Thread.currentThread().getName() + " esta cargando nafta.");
-        Thread.sleep(1000);
+        Thread.sleep(1000);          //Simula el tiempo que toma el Auto para cargar nafta
     }
 }

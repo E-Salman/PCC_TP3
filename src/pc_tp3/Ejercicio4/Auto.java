@@ -15,9 +15,9 @@ import java.util.logging.Logger;
  */
 public class Auto extends Vehiculo{
     String patente, modelo, marca;
-    double kmFaltantesParaElService;
-    boolean cargoNafta;
-    Service proximoService;    
+    double kmFaltantesParaElService;        //Cantidad de kilometros restantes para cargar nafta
+    boolean cargoNafta;                     //Indica si el Auto cargo nafta o no
+    Service proximoService;                 //Recurso compartido
     
     public Auto(Service service, double kmFaltantes){
         cargoNafta = false;
@@ -31,10 +31,10 @@ public class Auto extends Vehiculo{
     
     public void recorrer(){
         double auxKm;
-        while(!cargoNafta){
-            auxKm = new Random().nextInt(30);
+        while(!cargoNafta){                     //Mientras que no haya cargado nafta, el auto sigue avanzando
+            auxKm = new Random().nextInt(30);   //Simula la cantidad de kilometros que avanzara el Auto
             try {
-                Thread.sleep(2000);         //Simula el tiempo que se toma el auto en recorrer los kilometros.            
+                Thread.sleep(2000);             //Simula el tiempo que se toma el auto en recorrer los kilometros.            
                 if(auxKm <= kmFaltantesParaElService){
                     System.out.println("El " + Thread.currentThread().getName() + " avanza " + auxKm + " KM");
                 }
@@ -42,7 +42,7 @@ public class Auto extends Vehiculo{
                     System.out.println("El " + Thread.currentThread().getName() + " llego a la estacion.");
                 }
                 kmFaltantesParaElService = kmFaltantesParaElService - auxKm;
-                if(0 >= kmFaltantesParaElService){
+                if(0 >= kmFaltantesParaElService){  //Si llego a la estacion, carga nafta
                     proximoService.cargarNafta();
                     System.out.println("El " + Thread.currentThread().getName() + " termino de cargar nafta.");
                     cargoNafta = true;
